@@ -4,7 +4,7 @@ import LoadingMessage from './LoadingMessage';
 import { PodcastCard } from './PodcastCard';
 import SearchPodcasts from './SearchPodcasts';
 
-const PODCASTS_URL = 'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json';
+const PODCASTS_URL = import.meta.env.VITE_PODCAST_API_URL;
 
 export const PodcastList = () => {
   const { data, isLoading, hasError, error } = usePodcastFetch(PODCASTS_URL);

@@ -10,7 +10,6 @@
 - **Episodios**: Muestra una lista de episodios de un podcast seleccionado.
 - **Detalles del Episodio**: Muestra la descripción y un componente de audio para escuchar el episodio.
 
-
 ## Instalación
 
 1. Clona el repositorio:
@@ -29,6 +28,13 @@
 
     ```bash
     yarn install
+    ```
+
+4. Crea un archivo `.env` en la raíz del proyecto con las siguientes variables de entorno:
+
+    ```env
+    REACT_APP_PODCAST_API_URL=https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json
+    REACT_APP_PODCAST_EPISODES_URL=https://itunes.apple.com/lookup?id=
     ```
 
 ## Comandos

@@ -5,6 +5,9 @@ const CACHE_TIMESTAMP_KEY_PODCAST = 'podcast_data_timestamp';
 const CACHE_KEY_EPISODES = 'podcast_episodes_cache';
 const CACHE_TIMESTAMP_KEY_EPISODES = 'podcast_episodes_cache_timestamp';
 
+const ALLORIGINS_URL = import.meta.env.VITE_ALLORIGINS_URL;
+
+
 export const usePodcastFetch = (url, podcastId = null) => {
   const [state, setState] = useState({
     data: null,
@@ -54,7 +57,7 @@ export const usePodcastFetch = (url, podcastId = null) => {
     setLoadingState();
 
     try {
-      const allOriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+      const allOriginsUrl = `${ALLORIGINS_URL}${encodeURIComponent(url)}`;
 
       const response = await fetch(allOriginsUrl);
       if (!response.ok) {
@@ -119,7 +122,9 @@ export const usePodcastFetch = (url, podcastId = null) => {
     setLoadingState();
 
     try {
-      const allOriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://itunes.apple.com/lookup?id=' + podcastId + '&media=podcast&entity=podcastEpisode')}`;
+      const episodesUrl = `${import.meta.env.VITE_PODCAST_EPISODES_URL}${podcastId}&media=podcast&entity=podcastEpisode`;
+
+      const allOriginsUrl = `${import.meta.env.VITE_ALLORIGINS_URL}${encodeURIComponent(episodesUrl)}`;
 
       const response = await fetch(allOriginsUrl);
       const data = await response.json();

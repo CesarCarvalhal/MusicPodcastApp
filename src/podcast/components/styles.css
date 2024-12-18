@@ -143,15 +143,16 @@ li {
   padding-top: 12px;
   text-align: left;
   font-size: 0.9em;
+  background-color: #fff;
+  padding: 10px;
 }
 
 .episodes-table th {
   font-weight: bold;
-}
-
-.episodes-table td {
-  background-color: #fff;
-  padding: 10px 0px;
+  padding-top: 12px;
+  text-align: left;
+  font-size: 1em;
+  padding: 2px 10px;
 }
 
 .episodes-table a {

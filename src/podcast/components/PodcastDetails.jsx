@@ -4,10 +4,12 @@ import LoadingMessage from './LoadingMessage';
 import { usePodcastFetch } from '../../hook/usePodcastFetch ';
 import './styles.css';
 
+const PODCASTS_URL = import.meta.env.VITE_PODCAST_API_URL;
+
 export const PodcastDetails = () => {
   const { podcastId } = useParams();
 
-  const { data, isLoading, hasError, error } = usePodcastFetch('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json');
+  const { data, isLoading, hasError, error } = usePodcastFetch(PODCASTS_URL);
 
   const podcastData = data?.feed?.entry.find((entry) => entry.id.attributes['im:id'] === podcastId);
 
