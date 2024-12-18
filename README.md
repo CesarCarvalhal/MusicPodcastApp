@@ -33,8 +33,9 @@
 4. Crea un archivo `.env` en la raíz del proyecto con las siguientes variables de entorno:
 
     ```env
-    REACT_APP_PODCAST_API_URL=https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json
-    REACT_APP_PODCAST_EPISODES_URL=https://itunes.apple.com/lookup?id=
+    VITE_PODCAST_API_URL=https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json
+    VITE_PODCAST_EPISODES_URL=https://itunes.apple.com/lookup?id=
+    VITE_ALLORIGINS_URL=https://api.allorigins.win/get?url=
     ```
 
 ## Comandos
